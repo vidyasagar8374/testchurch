@@ -9,7 +9,7 @@ use DB;
 use Carbon\Carbon;
 use App\Models\massrequest;
 use App\Models\payments;
-use App\Models\parishprist;
+use App\Models\Parishprist;
 use App\Models\Post;
 use App\Models\youtube;
 use App\Models\familylist;
