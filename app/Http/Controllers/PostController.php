@@ -22,6 +22,7 @@ class PostController extends Controller
     }
     public function postsave(Request $request)
     {
+        dd($request);
         $url = "https://api.youtube.com";
         $uniqueFileName = "";
        
@@ -33,6 +34,7 @@ class PostController extends Controller
 
         //   dd($uniqueFileName);
         $data = new post();
+
         $data->post_name = $request->p_name;
         $data->post_description = $request->description;
         $data->file_path = $uniqueFileName;
