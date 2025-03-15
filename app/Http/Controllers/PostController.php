@@ -55,7 +55,7 @@ class PostController extends Controller
     }
     public function editpost(Request $request)
     {
-        $sql = post::find($request->id);
+        $sql = Post::find($request->id);
         if ($sql) {
             return view("posts.postedit", compact("sql"));
         }

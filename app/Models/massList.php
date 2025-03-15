@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class massList extends Model
 {
     use HasFactory;
-    protected $table='MassListData';
+    protected $table='masslistdata';
     public function masslistname(){
         return $this->hasMany(Requestlist::class, 'id', 'mass_info');
     }
