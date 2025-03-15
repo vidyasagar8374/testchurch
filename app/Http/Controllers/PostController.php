@@ -506,7 +506,7 @@ class PostController extends Controller
       // get posts
       public function getposts(){
         $postslists = Post::where('is_active', 1)->paginate(8);
-        return view('dashboard.posts.postslist', compact('postslists'));
+        return view('posts.postindex', compact('postslists'));
     }
     public function viewpost(Request $request){
         $id = $request->id;
