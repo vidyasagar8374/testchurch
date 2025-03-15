@@ -616,7 +616,7 @@ class PostController extends Controller
       // get posts
       public function getyoutube(){
         $yotubelists = YoutubePost::paginate(8);
-        dd($yotubelists);
+        // dd($yotubelists);
         return view('youtube.youtubelist', compact('yotubelists'));
     }
 
