@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\models\user;
+use App\models\User;
 use DB;
 use Carbon\Carbon;
 use App\Models\massrequest;
@@ -116,10 +116,10 @@ public function admindashboard(){
       if( auth()->user()->usertype == 'admin') {
          $massreqcount = massrequest::whereDate('request_date', Carbon::today())->count();
          $paymensts = payments::whereDate('payment_date', Carbon::today())->count();
-         $lastSixUsers = user::latest()->take(6)->get();   
-         $userscount = user::count(); 
+         $lastSixUsers = User::latest()->take(6)->get();   
+         $userscount = User::count(); 
          $donations =  donation::whereDate('created_at', Carbon::today())->count();
-         $users = user::orderBy('id','desc')->get();
+         $users = User::orderBy('id','desc')->get();
          // dd($users);
 
       }
@@ -141,7 +141,7 @@ public function registeration(){
 }
 public function registerationsave(Request $request){
 //  dd($request);
-   $user = user::where('email', $request->email)->first();
+   $user = User::where('email', $request->email)->first();
    // dd($findemail);
    if($user){
       toastr()->warning('Already registered with this email address please login.');
@@ -159,7 +159,7 @@ public function registerationsave(Request $request){
          $reqid = $registration->id;
          $user_id = 'INFYAM1114'.$reqid;
             $updated_isread= 1;
-            $sql = user::find($reqid);
+            $sql = User::find($reqid);
             $sql->user_id = $user_id;
             $sql->update();
 
@@ -178,7 +178,7 @@ public function registerationsave(Request $request){
 public function edituser(Request $request){
    $id = $request->id;
 
-   $useredits = user::where('user_id', $id)->first();
+   $useredits = User::where('user_id', $id)->first();
    // dd($useredits);
 
    if($useredits){
@@ -192,7 +192,7 @@ public function edituser(Request $request){
 public function updateuser(Request $request){
    $today_date = date("Y-m-d H:i:s");
    try {
-      $sql = user::where("user_id", $request->id)->update([
+      $sql = User::where("user_id", $request->id)->update([
           "is_member" => $request->is_member,
           "Updated_at" => $today_date,
       ]);
@@ -215,7 +215,7 @@ public function updateuser(Request $request){
 public function familylist() {
    // dd(auth());
    if(auth()->user()->usertype == 'admin') {
-      $familylist = user::where('is_member', '1')->paginate(5);
+      $familylist = User::where('is_member', '1')->paginate(5);
    }else {
       $familylist = familylist::where('header_id',auth()->user()->user_id)->get();
    }
@@ -248,7 +248,7 @@ public function savefamily(Request $request){
 
 public function familydata(Request $request){
    $id = $request->id;
-   $userDetails = user::where('id', $request->id)->first();
+   $userDetails = User::where('id', $request->id)->first();
    $familydetails = familylist::where('header_id', $userDetails->user_id)->get();
    return view('familydata.familydetails',compact('familydetails','userDetails'));
 }
