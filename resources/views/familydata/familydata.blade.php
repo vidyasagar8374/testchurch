@@ -39,7 +39,7 @@
                                             <a href=""><i class="bi bi-pencil-square"></i></a>
                                             <a href=""><i class="bi bi-trash"></i></a>
                                             @if(auth()->check() && auth()->user()->usertype == 'admin')
-                                            <a href="{{ url('/familydata/' . $data->id') }}"><i class="bi bi-people-fill"></i></a>
+                                            <a href="{{ url('/familydata/' . $data->id) }}"><i class="bi bi-people-fill"></i></a>
                                             @endif
                                         </td>
                                     </tr>
