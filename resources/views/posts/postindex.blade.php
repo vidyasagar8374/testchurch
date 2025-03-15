@@ -50,7 +50,7 @@
                                     <td>
                                         <a href="{{ url('/viewpost/' . $post->id) }}"><i class="bi bi-eye-fill"></i></a>
                                         <a href="{{ url('/viewpost/'. $post->id) }}"><i class="bi bi-pencil-square"></i></a>
-                                        <a href="{{ url('/destroypost/'. $post->id }}"><i class="bi bi-trash"></i></a>
+                                        <a href="{{ url('/destroypost/'. $post->id) }}"><i class="bi bi-trash"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
