@@ -10,7 +10,7 @@ use Carbon\Carbon;
 use App\Models\massrequest;
 use App\Models\payments;
 use App\Models\parishprist;
-use App\Models\post;
+use App\Models\Post;
 use App\Models\youtube;
 use App\Models\familylist;
 use Illuminate\Support\Facades\Hash;
@@ -126,7 +126,7 @@ public function admindashboard(){
 
       elseif( auth()->user()->usertype == 'user') {
         //today events(post)  
-        $posts = post::all();
+        $posts = Post::all();
       }
    }
    return view('admin.admindashboard',compact('massreqcount','paymensts','lastSixUsers','userscount','posts','donations','users'));
