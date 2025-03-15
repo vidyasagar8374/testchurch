@@ -48,9 +48,9 @@
                                     <td><span class="badge text-bg-danger">{{$post->status == 1 ? 'Active' : 'Inactive'}}</span></td>
                                     @endif
                                     <td>
-                                        <a href="/viewpost/{{ $post->id }}"><i class="bi bi-eye-fill"></i></a>
-                                        <a href="/viewpost/{{ $post->id }}"><i class="bi bi-pencil-square"></i></a>
-                                        <a href="/destroypost/{{ $post->id }}"><i class="bi bi-trash"></i></a>
+                                        <a href="{{ url('/viewpost/' . $post->id) }}"><i class="bi bi-eye-fill"></i></a>
+                                        <a href="{{ url('/viewpost/'. $post->id) }}"><i class="bi bi-pencil-square"></i></a>
+                                        <a href="{{ url('/destroypost/'. $post->id }}"><i class="bi bi-trash"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
