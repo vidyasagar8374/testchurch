@@ -20,7 +20,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg  bg-transparent fixed-top" id="navbar">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand" href="{{  url('/') }}">
         <img src="https://w7.pngwing.com/pngs/470/762/png-transparent-infant-jesus-of-prague-child-jesus-statue-religion-figurine-statue-miscellaneous-doll-resin-thumbnail.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
         
       </a>
