@@ -9,7 +9,7 @@
     <div class="col-lg-12 col-md-12 col-xs-12">
     <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
-            <h2>Posts</h2>
+            <h2>Parish Prist</h2>
             
             <a href="{{ route('admin.createparishprist') }}" class="btn btn-primary">
                 Add Prist
