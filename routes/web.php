@@ -131,7 +131,6 @@ Route::middleware(['web','adminauth','auth'])->group(function () {
     Route::delete('/posts/delete/{id}',  'destroypost')->name('admin.destroypost');  
 
 
-
     //create youtube 
     Route::get('/createyoutube', 'createyoutube')->name('admin.createyoutube'); 
     Route::post('/saveyoutube', 'saveyoutube')->name('admin.saveyoutube'); 
