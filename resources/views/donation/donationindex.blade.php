@@ -41,7 +41,7 @@
                                     <td>{{ $donation->donation_type }}</td>
                                     <td>{{ $donation->amount }}</td>
                                     <td>
-                                        <a href="/donation_invoice/{{ $donation->id }}"><i class="bi bi-eye-fill"></i></a>
+                                        <a href="{{ url('/donation_invoice/' .$donation->id) }}"><i class="bi bi-eye-fill"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach

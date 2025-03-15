@@ -34,7 +34,7 @@
                                         <td>{{ $data->transaction_id }}</td>
                                         <td>{{ $data->status }}</td>
                                         <td>
-                                            <a href="/invoice/{{ $data->id }}"><i class="bi bi-eye-fill"></i></a>
+                                            <a href="{{ url('/invoice/'. $data->id) }}"><i class="bi bi-eye-fill"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach

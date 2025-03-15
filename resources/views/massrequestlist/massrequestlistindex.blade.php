@@ -41,9 +41,9 @@
                                         @endif
                                         <td>{{ $post->Order_List == 1 ? 'First' : 'Secound' }}</td>
                                         <td>
-                                            <a href="/massrequestedit/{{ $post->id }}"><i class="bi bi-eye-fill"></i></a>
-                                            <a href="/massrequestedit/{{ $post->id }}"><i class="bi bi-pencil-square"></i></a>
-                                            <a href="/massrequesteditin/{{ $post->id }}"><i class="bi bi-trash"></i></a>
+                                            <a href="{{ url('/massrequestedit/' .$post->id) }}"><i class="bi bi-eye-fill"></i></a>
+                                            <a href="{{ url('/massrequestedit/' .$post->id') }}"><i class="bi bi-pencil-square"></i></a>
+                                            <a href="{{ url('/massrequesteditin/'. $post->id') }}"><i class="bi bi-trash"></i></a>
                                         </td>
                                     </tr>
 

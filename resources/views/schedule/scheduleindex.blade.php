@@ -37,9 +37,9 @@
                                         <!-- <td>{{ $post->file_path }}</td> -->
 
                                         <td>
-                                            <a href="/scheduledit/{{ $post->id }}"><i class="bi bi-eye-fill"></i></a>
-                                            <a href="/scheduledit/{{ $post->id }}"><i class="bi bi-pencil-square"></i></a>
-                                            <a href="/scheduledelete/{{ $post->id }}"><i class="bi bi-trash"></i></a>
+                                            <a href="{{ url('/scheduledit/' . $post->id) }}"><i class="bi bi-eye-fill"></i></a>
+                                            <a href="{{ url('/scheduledit/' . $post->id) }}"><i class="bi bi-pencil-square"></i></a>
+                                            <a href="{{ url('/scheduledelete/' . $post->id) }}"><i class="bi bi-trash"></i></a>
                                         </td>
                                     </tr>
 
