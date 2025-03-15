@@ -10,7 +10,7 @@ use App\Models\YoutubePost;
 // use App\Models\massrequestlist;
 // use App\Models\daywiselist;
 use App\Models\ScheduleList;
-use App\Models\parishprist;
+use App\Models\Parishprist;
 use App\Models\Requestlist;
 use Illuminate\Support\Facades\Crypt;
 use DB;
@@ -283,12 +283,12 @@ class PostController extends Controller
 
     }
     public function parishlist(){
-        $parishlist = parishprist::paginate(10);
+        $parishlist = Parishprist::paginate(10);
         return view('parish.parishlist',compact('parishlist'));
     }
     public function editparish(Request $request){
         $parishid= $request->id;
-        $sql = parishprist::find($parishid);
+        $sql = Parishprist::find($parishid);
         if($sql) {
             return view('parish.editparish',compact('sql'));
         }
@@ -296,7 +296,7 @@ class PostController extends Controller
     }
     public function updateparish(Request $request){
         $id = $request->id;
-        $sql = parishprist::find($id);
+        $sql = Parishprist::find($id);
         $customFileName = '';
         // $requestfile =
         if ($request->hasFile("file")) {
@@ -782,6 +782,11 @@ class PostController extends Controller
 
       
 
+    }
+    private function extractYoutubeId($url)
+    {
+        preg_match('/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/', $url, $matches);
+        return $matches[1] ?? null;
     }
 
 
